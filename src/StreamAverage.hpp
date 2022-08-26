@@ -12,7 +12,7 @@ class StreamAverage
 {
     private:
     size_t numData = 0;
-    T average;
+    T average = 0;
 
     public:
     /**
