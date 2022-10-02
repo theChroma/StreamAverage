@@ -1,0 +1,7 @@
+StreamAverage	KEYWORD1
+add	KEYWORD2
+get	KEYWORD2
+getMax  KEYWORD2
+getMin  KEYWORD2
+getNumValues    KEYWORD2
+reset	KEYWORD2
