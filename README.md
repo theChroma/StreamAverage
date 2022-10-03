@@ -1,13 +1,20 @@
 # StreamAverage
 
-C++ / Arduino Stream-Average-Library
+Single Header C++ / Arduino Stream-Average-Library
+
 **Disclaimer:** This is not a moving average, instead it accumulates the average of the
 values you add
 
 ## Installating
-### PlatformIO
-### Arduino Library Manager
-### From Github
+#### PlatformIO
+Go to PlatformIO Home, click on Libraries and search for `StreamAverage`
+
+
+#### Arduino Library Manager
+Open the library manager by clicking on `Tools > Manage Libraries` and search for `StreamAverage`. Then click install.
+
+#### From Github
+In this Repository go to ![Releases](https://github.com/plsTrustMeImAnEngineer/StreamAverage/releases). There choose the Version you like an download the library as `.zip` just the `.h` file.
 
 ## Documentation
 
