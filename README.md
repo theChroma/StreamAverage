@@ -5,7 +5,7 @@ Single Header C++ / Arduino Stream-Average-Library
 **Disclaimer:** This is not a moving average, instead it accumulates the average of the
 values you add
 
-## Installating
+## Installation
 #### PlatformIO
 Go to PlatformIO Home, click on Libraries and search for `StreamAverage`
 
