@@ -14,7 +14,7 @@ Go to PlatformIO Home, click on Libraries and search for `StreamAverage`
 Open the library manager by clicking on `Tools > Manage Libraries` and search for `StreamAverage`. Then click install.
 
 #### From Github
-In this Repository go to ![Releases](https://github.com/plsTrustMeImAnEngineer/StreamAverage/releases). There choose the Version you like an download the library as `.zip` just the `.h` file.
+In this Repository go to [Releases](https://github.com/plsTrustMeImAnEngineer/StreamAverage/releases). There choose the Version you like an download the library as `.zip` just the `.h` file.
 
 ## Documentation
 
