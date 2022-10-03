@@ -26,6 +26,13 @@ using testTypes = testing::Types
 
 TYPED_TEST_SUITE(StreamAverageTest, testTypes);
 
+TYPED_TEST(StreamAverageTest, shouldInitializeWithZero)
+{
+	EXPECT_EQ(0, this->unitUnderTest.get());
+	EXPECT_EQ(0, this->unitUnderTest.getNumValues());
+	EXPECT_EQ(0, this->unitUnderTest.getMax());
+	EXPECT_EQ(0, this->unitUnderTest.getMin());
+}
 
 TYPED_TEST(StreamAverageTest, resetsAverageAndChecksZero)
 {

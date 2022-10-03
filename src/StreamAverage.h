@@ -12,7 +12,7 @@
 template<typename ExternalType, typename InternalType = ExternalType>
 class StreamAverage
 {
-    private:
+private:
     ExternalType max = 0;
     ExternalType min = 0;
     size_t numValues = 0;
