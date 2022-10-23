@@ -1,3 +1,6 @@
+[![arduino-library-badge](https://www.ardu-badge.com/badge/StreamAverage.svg?)](https://www.ardu-badge.com/StreamAverage)
+[![PlatformIO Registry](https://badges.registry.platformio.org/packages/samuel-lehnen/library/StreamAverage.svg)](https://registry.platformio.org/libraries/samuel-lehnen/StreamAverage)
+
 # StreamAverage
 
 Single Header C++ / Arduino Stream-Average-Library
@@ -18,15 +21,9 @@ In this Repository go to [Releases](https://github.com/plsTrustMeImAnEngineer/St
 
 ## Documentation
 
-First create a `StreamAverage` object. You can pass it two types as template argument.
-`ExternalType` The first type is used to get and set values in the Average.
-`InternalType` The second type is used for the internal calculations of the average.
-
-By default internal and external types are the same.
-
+First create a `StreamAverage` object of your desired type by passing as template argument.
 ```cpp
-StreamAverage<float> average; // uses float both externally and internally
-StreamAverage<int, float> average; // uses int externally and float internally
+StreamAverage<float> average;
 ```
 
 
