@@ -1,6 +1,6 @@
 {
     "name": "StreamAverage",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Library for averaging without having huge data Buffers consuming all your memory.",
     "keywords": "average, data, embedded, arduino, mean, math",
     "repository":

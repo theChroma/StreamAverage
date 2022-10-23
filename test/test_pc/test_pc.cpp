@@ -6,23 +6,15 @@
 
 #include <vector>
 #include <numeric>
-#include <utility>
 
 template<typename T> 
 struct StreamAverageTest : public testing::Test
 {
-	StreamAverage<typename T::first_type> unitUnderTest;
-	std::vector<typename T::first_type> values;
+	StreamAverage<T> unitUnderTest;
+	std::vector<T> values;
 };
 
-using testTypes = testing::Types
-<
-	std::pair<int, float>,
-	std::pair<double, double>,
-	std::pair<float, float>,
-	std::pair<int, int>,
-	std::pair<uint16_t, uint16_t>
->;
+using testTypes = testing::Types<float, double, int, uint16_t>;
 
 TYPED_TEST_SUITE(StreamAverageTest, testTypes);
 
@@ -59,10 +51,9 @@ TYPED_TEST(StreamAverageTest, checksMaxMinNumValues)
 
 TYPED_TEST(StreamAverageTest, checksOperatorsAndImplicitCast)
 {
-	using T = typename TypeParam::first_type;
 	this->unitUnderTest.reset();
 	this->unitUnderTest << 29;
-	T average = this->unitUnderTest;
+	TypeParam average = this->unitUnderTest;
 	EXPECT_EQ(29, average);
 }
 
@@ -71,13 +62,12 @@ TYPED_TEST(StreamAverageTest, addsValuesAndChecksPrecision)
 	this->unitUnderTest.reset();
 	for(size_t i = 0; i < 1000; i++)
 	{
-		typename TypeParam::first_type newValue = static_cast<typename TypeParam::first_type>(std::rand() / 1.37);
+		TypeParam newValue = static_cast<TypeParam>(std::rand() / 1.37);
 
 		this->values.push_back(newValue);
-		typename TypeParam::first_type expectedAvg = 
-		std::reduce(this->values.begin(), this->values.end()) / static_cast<typename TypeParam::second_type>(this->values.size());
+		TypeParam expectedAvg = std::reduce(this->values.begin(), this->values.end()) / static_cast<TypeParam>(this->values.size());
 
-		typename TypeParam::first_type actualAvg = this->unitUnderTest << newValue;
+		TypeParam actualAvg = this->unitUnderTest << newValue;
 
 		EXPECT_NEAR(expectedAvg, actualAvg, 0.1);
 	}

@@ -5,18 +5,16 @@
  * @brief Class for averaging without having huge 
  *        data Buffers consuming all your memory.
  * 
- * @tparam ExternalType Type used to get and set values in the class
- * @tparam InternalType Type used for internal calculations of the average
- *         By default internal and external types are the same
+ * @tparam T The datatype to average
  */
-template<typename ExternalType, typename InternalType = ExternalType>
+template<typename T>
 class StreamAverage
 {
 private:
-    ExternalType max = 0;
-    ExternalType min = 0;
+    T max = 0;
+    T min = 0;
     size_t numValues = 0;
-    InternalType sum = 0;
+    T sum = 0;
 
 public:
     /**
@@ -25,7 +23,7 @@ public:
      * @param value The value to add
      * @return The new Average
      */
-    inline ExternalType add(ExternalType value)
+    inline T add(T value)
     {
         if(numValues == 0)
         {
@@ -37,7 +35,7 @@ public:
         if(value < min) min = value;
 
         sum += value;
-        return (InternalType)sum / ++numValues;
+        return (T)sum / ++numValues;
     }
 
 
@@ -47,7 +45,7 @@ public:
      * @param value The value to add
      * @return The new Average
      */
-    inline ExternalType operator<<(ExternalType value)
+    inline T operator<<(T value)
     {
         return add(value);
     }
@@ -56,10 +54,10 @@ public:
     /**
      * @brief Get the current average
      */
-    inline ExternalType get() const
+    inline T get() const
     {
-        if(numValues == 0) return (InternalType)0;
-        return (InternalType)sum / numValues;
+        if(numValues == 0) return 0;
+        return sum / numValues;
     }
 
 
@@ -67,7 +65,7 @@ public:
      * @brief Get the maximum value added to the average
      *        since the last reset 
      */
-    inline ExternalType getMax() const
+    inline T getMax() const
     {
         return max;
     }
@@ -77,7 +75,7 @@ public:
      * @brief Get the minimum value added to the average
      *        since the last reset
      */
-    inline ExternalType getMin() const
+    inline T getMin() const
     {
         return min;
     }
@@ -108,7 +106,7 @@ public:
     /**
      * @brief Get the current average implicitly
      */
-    inline operator ExternalType() const
+    inline operator T() const
     {
         return get();
     }
