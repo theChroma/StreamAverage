@@ -1,5 +1,4 @@
 [![arduino-library-badge](https://www.ardu-badge.com/badge/StreamAverage.svg?)](https://www.ardu-badge.com/StreamAverage)
-
 [![PlatformIO Registry](https://badges.registry.platformio.org/packages/samuel-lehnen/library/StreamAverage.svg)](https://registry.platformio.org/libraries/samuel-lehnen/StreamAverage)
 
 # StreamAverage
