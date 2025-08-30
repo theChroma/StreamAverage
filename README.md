@@ -27,7 +27,7 @@ StreamAverage<float> average;
 ```
 
 
-You cann get values into the average by using the `add()` method
+You can get values into the average by using the `add()` method
 ```cpp
 average.add(newValue);
 ```
